@@ -45,5 +45,12 @@ df <- dbGetQuery(con, myQuery)
 library(dplyr)
 df<-filter(df,Gender=="P")
 print(df)
-
+library(RMySQL)
+con = dbConnect(MySQL(), user = 'root', password = '', dbname = 'ps2[tommy]', host = 'localhost')
+dbListTables(con) 
+myQuery <- "select * from tommy_prakstatis;"
+df <- dbGetQuery(con, myQuery)
+library(dplyr)
+df<-filter(df,Gender=="L")
+print(df)
 
